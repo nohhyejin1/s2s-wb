@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosieshop</title>
+    <script type="text/javascript" src="index.js"></script>
+    <style>
+        .item {
+            padding: 20px; height: 500px; width: 250px;
+        }
+        .item-img {
+            height: 300px;
+        }
+        .item-button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="position: fixed; top: 0; left: 0; right: 0; height: 60px; display: flex; justify-content: space-between; background: rgb(255, 234, 243)">
+            <h3 class="logo" style="padding-left: 25px;">로지샵 🌹</h1>
+            <ul class="gnb" style="list-style: none; display: flex;">
+                <li style="width: 100px;">장바구니👜</li>
+                <li style="width: 100px;">로그인🔑</li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="items" style="margin-top: 85px;">
+        <ul style="list-style: none; display: flex; padding: 30px;">
+            <div class="item">
+                <img class="item-img" src="img/item1.png"/>
+                <li>LG 오브제컬렉션 식기세척기 스팀</li>
+                <button class="item-button" id="dish-washer" onclick=addToCart(id)>장바구니 담기</button>
+            </div>
+            <div class="item">
+                <img class="item-img" src="img/item2.png"/>
+                <li>LG 퓨리케어 360도 공기청정기</li>
+                <button class="item-button" id="air-purifier" onclick=addToCart(id)>장바구니 담기</button>
+            </div>
+            <div class="item">
+                <img class="item-img" src="img/item3.png"/>
+                <li>LG 코드제로 오브제컬렉션</li>
+                <button class="item-button" id="clorox-detergent" onclick=addToCart(id)>장바구니 담기</button>
+            </div>
+        </ul>
+    </div>
+</body>
+</html>
