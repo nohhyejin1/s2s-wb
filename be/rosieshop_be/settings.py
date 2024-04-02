@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import boto3
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -74,10 +75,22 @@ WSGI_APPLICATION = 'rosieshop_be.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+ssm = boto3.client('ssm')
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'rosie-sg-rds',
+        'USER': 'admin',
+        'PASSWORD' : ssm.get_parameter(Name='/rosie/demo/rds-password', WithDecryption=True)['Parameter']['Value'],
+        'HOST' : 'rosie-sg-rds.cw4iktllotnd.ap-northeast-2.rds.amazonaws.com',
+        'PORT' : '3306',
     }
 }
 
