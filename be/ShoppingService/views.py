@@ -6,6 +6,9 @@ from .models import CartInstances
 def index(request):
     return HttpResponse('Hi! This is index page.')
 
+def health(request):
+    return HttpResponse('OK')
+
 @csrf_exempt
 def add_to_cart(request):
     try:
