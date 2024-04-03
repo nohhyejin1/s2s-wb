@@ -143,5 +143,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
-    "https://rosieshop.domain.aws-team-demo.link",
+    "https://be.rosieshop.domain.aws-team-demo.link",
 )
