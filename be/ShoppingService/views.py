@@ -9,7 +9,6 @@ def index(request):
 @csrf_exempt
 def add_to_cart(request):
     try:
-
         data = json.loads(request.body.decode('utf-8'))
         user_id = data.get('user_id')
         item_id = data.get('item_id')
@@ -21,3 +20,7 @@ def add_to_cart(request):
             return JsonResponse({'Error': 'Invalid message data'}, status=400)
     except json.JSONDecodeError:
         return JsonResponse({'Error': 'Invalid JSON data'}, status=400)
+
+@csrf_exempt
+def health(request):
+    return JsonResponse({'Return': 'Alive!'}, status=200)
