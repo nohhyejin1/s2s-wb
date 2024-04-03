@@ -1,4 +1,4 @@
-const baseURL = 'https://rosie-alb-demo-be-420561263.ap-northeast-2.elb.amazonaws.com'
+const baseURL = 'https://be.rosieshop.domain.aws-team-demo.link'
 // const baseURL = 'http://127.0.0.1:8000'
 
 function addToCart(item_id) {
