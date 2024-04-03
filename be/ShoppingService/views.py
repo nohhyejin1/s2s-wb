@@ -20,7 +20,3 @@ def add_to_cart(request):
             return JsonResponse({'Error': 'Invalid message data'}, status=400)
     except json.JSONDecodeError:
         return JsonResponse({'Error': 'Invalid JSON data'}, status=400)
-
-@csrf_exempt
-def health(request):
-    return HttpResponse('OK', status_code=200)
