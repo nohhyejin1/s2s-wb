@@ -23,4 +23,4 @@ def add_to_cart(request):
 
 @csrf_exempt
 def health(request):
-    return HttpResponse(status_code=200)
+    return HttpResponse('OK', status_code=200)
