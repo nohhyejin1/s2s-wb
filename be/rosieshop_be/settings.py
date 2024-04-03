@@ -75,24 +75,24 @@ WSGI_APPLICATION = 'rosieshop_be.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-# ssm = boto3.client('ssm')
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'rosieshop_db',
-#         'USER': 'admin',
-#         'PASSWORD' : ssm.get_parameter(Name='/rosie/demo/rds-password', WithDecryption=True)['Parameter']['Value'],
-#         'HOST' : 'rosie-sg-rds.cw4iktllotnd.ap-northeast-2.rds.amazonaws.com',
-#         'PORT' : '3306',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+ssm = boto3.client('ssm')
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'rosieshop_db',
+        'USER': 'admin',
+        'PASSWORD' : ssm.get_parameter(Name='/rosie/demo/rds-password', WithDecryption=True)['Parameter']['Value'],
+        'HOST' : 'rosie-sg-rds.cw4iktllotnd.ap-northeast-2.rds.amazonaws.com',
+        'PORT' : '3306',
+    }
+}
 
 
 # Password validation
