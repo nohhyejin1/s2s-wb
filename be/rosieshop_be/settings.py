@@ -28,9 +28,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
-    '*.rosieshop.domain.aws-team-demo.link',
+    'rosieshop.domain.aws-team-demo.link',
+    'be.rosieshop.domain.aws-team-demo.link',
 ]
-
 
 # Application definition
 
