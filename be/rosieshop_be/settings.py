@@ -24,9 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-39g=stdjd6r2^e)t8x--b#zzjnf#&i&5*3vvg!c9ysbhqk@60$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '*.rosieshop.domain.aws-team-demo.link',
+]
 
 
 # Application definition

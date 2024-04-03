@@ -3,7 +3,7 @@
 import requests
 import json
 
-url = "http://localhost:8000/add/cart"
+url = "https://be.rosieshop.domain.aws-team-demo.link/add/cart"
 
 req = {
     "user_id": "nhj",
@@ -12,6 +12,7 @@ req = {
 
 response = requests.post(url,
                          data=json.dumps(req),
-                         headers={"Content-Type": "application/json"})
+                         headers={"Content-Type": "application/json"},
+                         verify=False)
 
 print(response.text)
