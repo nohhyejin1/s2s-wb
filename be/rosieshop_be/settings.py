@@ -86,7 +86,7 @@ ssm = boto3.client('ssm')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'rosie-sg-rds',
+        'NAME': 'rosieshop_db',
         'USER': 'admin',
         'PASSWORD' : ssm.get_parameter(Name='/rosie/demo/rds-password', WithDecryption=True)['Parameter']['Value'],
         'HOST' : 'rosie-sg-rds.cw4iktllotnd.ap-northeast-2.rds.amazonaws.com',
