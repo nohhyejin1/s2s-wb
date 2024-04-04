@@ -13,3 +13,12 @@ function addToCart(item_id) {
     .then(data => console.log(data))
     .catch(error => console.error(error));
 }
+
+function getCart(item_id) {
+    fetch(baseURL + "/cart", {
+        method: "GET",
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+}
