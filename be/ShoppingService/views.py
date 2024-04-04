@@ -26,10 +26,8 @@ def add_to_cart(request):
         return JsonResponse({'Error': 'Invalid JSON data'}, status=400)
 
 @csrf_exempt
-def get_cart():
-    try:
-        model_json = serializers.serialize("json", CartInstances.objects.all())
-        data = {"Response": model_json}
-        return JsonResponse(data)
-    except json.JSONDecodeError:
-        return JsonResponse({'Error': 'Invalid JSON data'}, status=400)
+def get_cart(request):
+    model_json = serializers.serialize("json", CartInstances.objects.all())
+    data = {"Response": model_json}
+    return JsonResponse(data)
+
