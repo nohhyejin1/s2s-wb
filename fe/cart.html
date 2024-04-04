@@ -20,13 +20,15 @@
 <body>
     <header>
         <div style="position: fixed; top: 0; left: 0; right: 0; height: 60px; display: flex; justify-content: space-between; background: rgb(255, 234, 243)">
-            <h3 class="logo" style="padding-left: 25px;">로지샵 🌹</h1>
+            <h3 class="logo" style="padding-left: 25px;"><a href="./index.html">로지샵 🌹</a></h1>
             <ul class="gnb" style="list-style: none; display: flex;">
                 <li style="width: 100px;"><a href="./cart.html">장바구니👜</a></li>
             </ul>
         </div>
     </header>
-
-    <div id="cart" style="margin-top: 85px;" onclick=getCart(id)></div>
+    <div style="margin-top: 85px;">
+        <button onclick=getCart(id)>장바구니 확인</button>
+    </div>
+    <div id="cart" style="margin-top: 100px;"></div>
 </body>
 </html>
